@@ -31,3 +31,27 @@ const anotherId= Symbol('123')*/
 
 //HOW TO IDENTIFY DATATYPES: typeof
 // console.log(typeof bigNumber)
+
+//**************STACK & HEAP MEMORY **************
+//Primitive datatype -> STACK memory: we get a copy of variable
+//Non-Primitive datatype -> HEAP memory: we get refrence of the original value
+
+//Stack explained: passed by value
+/*let myYoutubename= "Sanadotcom"
+
+let anothername= "myYoutubename"
+anothername= "Chaiaurcode"
+
+console.log(myYoutubename)
+console.log(anothername)*/
+
+//Heap explained: passed by refrence
+/*let userOne= {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+let userTwo= userOne
+userTwo.email= "Hitesh@google.com"
+
+console.log(userOne.email)
+console.log(userTwo.email)*/
