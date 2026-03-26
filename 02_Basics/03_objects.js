@@ -22,8 +22,9 @@ const JsUser= {
     lastLoginDays: ["Monday", "Saturday"]
 }
 
+
 //b) ACCESS- 2 ways:
-/*console.log(JsUser.email);
+/*console.log(JsUser.email);                  //preferred
 console.log(JsUser["email"]);
 */
 
@@ -37,9 +38,28 @@ console.log(typeof(JsUser.mySym));  */   //But it is not being used as  a 'Symbo
 //console.log(JsUser[mySym])              // It can only be accessed this way.
 
 //c) MODIFY VALUE OF OBJ-
-JsUser.email= "hitesh@chatgpt.com"       //this way we can override elements.
+/*JsUser.email= "hitesh@chatgpt.com"       //this way we can override elements.
 console.log(JsUser);
 
 Object.freeze(JsUser)             // becz we freezed the Obj,the below modified elements in the obj could not propagate further.
 JsUser.email= "hitesh@microsoft.com"
 console.log(JsUser);
+*/
+
+//FUNCTIONS- (adding functions in objects:)
+/*JsUser.greeting= function(){
+    console.log("Hello JS user");
+}
+//console.log(JsUser.greeting);       // [Function (anonymous)]
+//console.log(JsUser.greeting());       // Hello JS user
+                                    //    undefined
+
+JsUser.greetingTwo= function(){
+    console.log(`Hello JS user, ${this.name}`);
+}
+
+console.log(JsUser.greeting());
+console.log(JsUser.greetingTwo());
+*/
+
+//NOTE: More about this will be explained ahead.
