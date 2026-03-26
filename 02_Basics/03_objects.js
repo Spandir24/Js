@@ -6,7 +6,7 @@
 //**********************
 
  
-//Oject literals-
+//Object literals-
 //a) DECLARATION
 const mySym= Symbol("key1")
 
