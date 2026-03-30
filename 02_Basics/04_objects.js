@@ -58,8 +58,8 @@ console.log(users[1].email)  */      //STEP: 1) an array => thus indexed,
 //***********
 console.log(tinderUser)
 //imp methods-
-//console.log(Object.keys(tinderUser))       //returns an array*** (V.IMP)
-// console.log(Object.values(tinderUser))
+//console.log(Object.keys(tinderUser))       //returns an array- containing keys*** (V.IMP)
+// console.log(Object.values(tinderUser))    //returns an array- containing values
 // console.log(Object.entries(tinderUser))   //each 'key:value' pair is made an array.
 //to ask whether a particular value(ie., key) exists in an object-
-console.log(tinderUser.hasOwnProperty('isLoggedIn'));            
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'));            
