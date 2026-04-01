@@ -86,7 +86,7 @@ console.log(loginUserMessage());
 */
 
 //to avoid such 'undefined' cases we can pass default values in- func declaration:-
-function loginUserMessage(username="Sana"){
+/*function loginUserMessage(username="Sana"){
     if(!username){                        //control will never go inisde this (becz it as a 'default' value as base case.)
         console.log("Please enter a username");
         return;
@@ -95,3 +95,53 @@ function loginUserMessage(username="Sana"){
 }
 console.log(loginUserMessage()); 
 console.log(loginUserMessage("Hitesh"));   // argument will overide the default value
+*/
+
+//-----------------------------------------------------
+//shopping cart scenario- wherein we dont know how many arguments may come and we have to set our no of parameters accordingly-
+//we use 'REST OPERTOR'- ...
+/*function calculateCartPrice(...num1){
+    return num1;
+}
+console.log(calculateCartPrice(200,400,500,2000));   //amounts of items in cart
+*/
+
+//Interview ques: "What goes into num1?"
+/*function calculateCartPrice(val1, val2,...num1){
+    return num1;
+}
+console.log(calculateCartPrice(200,400,500,2000));
+*/
+
+
+//A) how is an OBJECT passed and used in a function?-
+/*const user={
+    username:"hitesh",
+    price: 199,
+}
+function handleObject(anyobject){           //a generic name is given so that we can pass any object
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}.`);  
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.prices}.`);    //Thus we have to be careful about whether the type being passed is an object and the required properties exist in it or not
+}
+//handleObject(user);         // as ARGUMENTS we pass the object 
+*/
+
+
+//another way of passing object in function call- (by declaring obj inside the funcion call as ARGUMENT)
+/*function handleObject(anyobject){  
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}.`);  
+}
+handleObject({
+    username: "Sana",
+    price: 399
+})
+//NOTE: Function declaration must be written before function call.
+*/
+
+
+//B) how is an ARRAY passed and used in a function?-
+const myNewArray=[200,400,100,600];
+function returnSecondValue(getArray){
+    return getArray[1];          //NOTE: we have to use the name of the parameter being used by used and not the actual array (or rgument)
+}
+console.log(returnSecondValue(myNewArray));
