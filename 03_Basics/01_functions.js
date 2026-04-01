@@ -115,6 +115,7 @@ console.log(calculateCartPrice(200,400,500,2000));
 
 
 //A) how is an OBJECT passed and used in a function?-
+//1.
 /*const user={
     username:"hitesh",
     price: 199,
@@ -128,6 +129,7 @@ function handleObject(anyobject){           //a generic name is given so that we
 
 
 //another way of passing object in function call- (by declaring obj inside the funcion call as ARGUMENT)
+//2.
 /*function handleObject(anyobject){  
     console.log(`Username is ${anyobject.username} and price is ${anyobject.price}.`);  
 }
@@ -140,8 +142,21 @@ handleObject({
 
 
 //B) how is an ARRAY passed and used in a function?-
-const myNewArray=[200,400,100,600];
+//1. via variable name-
+/*const myNewArray=[200,400,100,600]
 function returnSecondValue(getArray){
-    return getArray[1];          //NOTE: we have to use the name of the parameter being used by used and not the actual array (or rgument)
+    return getArray[1];          //NOTE: we have to use the name of the parameter being used by used and not the actual array (or argument). 
+                                //"inside the function, the parameter name is what matters."
 }
 console.log(returnSecondValue(myNewArray));
+*/
+
+//another way of passing array in function call- (by declaring array directly inside the funcion call as ARGUMENT)
+//2.
+/*const myNewArray=[200,400,100,600]
+function returnSecondValue(getArray){
+    return getArray[1];          //NOTE: we have to use the name of the parameter being used by used and not the actual array (or argument). 
+                                //"inside the function, the parameter name is what matters."
+}
+console.log(returnSecondValue([200,400,100,600]));
+*/
