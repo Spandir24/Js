@@ -44,9 +44,46 @@ console.log(a);
         //to chk whether we can access-
         console.log(username)  
     }
-    //console.log(website)          //gives error thus two() func call doesn't run
+    //console.log(website)          //gives error thus two() func call execute hi nhi hua
     two()                           // if we comment this as well the func two() wont be read for execution becz not called
 }
 one()
 */
 
+//similar happens in if-else scope
+/*if(true){
+    const username= "hitesh"
+    if(username=== "hitesh"){
+        const website= " youtube"
+        console.log(username+ website);
+    }
+    //console.log(website);           //ERROR- becz its scope was limited to inner 'if' block 
+}
+//console.log(username);               //ERROR- becz its scope was limited until the outer 'if' block 
+*/
+
+//INTERESTING CONCEPT +++++++++++++++++++++++  
+//one way of writing function
+/*function addone(num){
+    return num+1
+}
+addone(5)
+
+//another way of writing function wiz also sometimes called EXPRESSION- (by holding the func into a variable)
+const addTwo= function(num){
+    return num+2
+}
+addTwo(5)
+*/
+
+//Now what we do is: write func call before declaration in both cases-
+// (addone(5))       //It executes w/o giving any o/p. with concole.log() it gives o/p= 6
+
+// function addone(num){
+//     return num+1
+// }
+
+addTwo(5)            //ReferenceError: Cannot access 'addTwo' before initialization=>   'HOISTING' CONCEPT
+const addTwo= function(num){
+    return num+2
+}
