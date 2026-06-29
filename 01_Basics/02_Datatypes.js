@@ -7,13 +7,21 @@ let state;   //undefined
 // -> Primitive datatypes:-
     //number= 2^53
     //bigint=
-    //string= "" OR ''(any)
+    //string= enclsed in "" OR ''(any)
     //boolean= true/false
-    //null [Intentionally empty] (also a standalone value in JS)
+    //null [Intentionally empty] (also a STANDALONE VALUE in JS)- represents an EMPTY VALUE:
+/*let state= null; OR
+let state;
+*/
+
     //undefined [Unintentionally empty]- when a value is not assigned
     //symbols => when we want to talk about somethng unique (most used in react)
+
+//NOTE:
+//let state= "" // does not denote an empty value (ie., null), instead denotes empty string
+
 
 //object
 
 console.log(typeof null)
-console.log(typeof undefined)
+console.log(typeof undefined) 
