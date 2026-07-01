@@ -39,7 +39,7 @@ const anotherId= Symbol('123')*/
 //Stack explained: passed by value
 /*let myYoutubename= "Sanadotcom"
 
-let anothername= "myYoutubename"
+let anothername= myYoutubename
 anothername= "Chaiaurcode"
 
 console.log(myYoutubename)
