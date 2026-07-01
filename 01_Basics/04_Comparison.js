@@ -8,12 +8,12 @@
 
 
 //prblm occurs when we compare dissimilar datatypes:
-/*console.log("2">1)   //automatically 2 got converted to no
+/*console.log("2">1)   //here automatically, 2 got converted to no
 console.log("02">1)*/
 /*Here we got predictable ans but sometimes we dont. 
 CONCLUSION:'Always compare similar datatypes only'- Typescript doesn't alllow dissimilar comparisons*/
 
-//this example [with null] below explains the same:
+//this example [with 'null'] below explains the same:
 /*console.log(null>0)
 console.log(null==0)
 console.log(null>=0)*/
@@ -22,12 +22,12 @@ Comparisons- convert null to a no, treating it as 0. That's why null>=0 : true &
 */
 
 
-//this example[with undefined] below explains the same:
+//this example[with 'undefined'] below explains the same: [returns value 'false in all cases]
 /*console.log(undefined==0)
 console.log(undefined>0)
 console.log(undefined<0)*/
 
-//Strict check ie., === : checks values+ datatypes as well
+//Strict check ie., === : checks' values+ datatypes' 
 console.log("2"==2)   //true
 console.log("2"===2)
 
