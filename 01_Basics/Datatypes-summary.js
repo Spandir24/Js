@@ -3,13 +3,13 @@
 const scoreValue= 100.3
 const isLoggedIn= false
 const outsideTemp= null
-let userEmail= undefined     // OR can write it as- (both same):  let userEmail
+let userEmail= undefined     // OR can write it as- (both same):  let userEmail;
 */
 
 //usage and example of symbol:
 /*onst id= Symbol('123')
 const anotherId= Symbol('123')*/
-// console.log(id==anotherId)
+// console.log(id==anotherId)   [Symbol() creates a new unique identity every time, and the argument you pass (ie., '123') is only a descriptive label, not the symbol's actual value.]
 
 // const bigNumber = 42542362321334n
 
