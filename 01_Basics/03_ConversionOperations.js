@@ -30,7 +30,7 @@ console.log(valueInNumber)*/
 
 //CONCLUSION:  for Number-  
 /*                        "33" => 33
-                          "33abc" => NaN
+                          "33abc" => NaN        NOTE: [But, typeof NaN is a 'number']
                            true => 1; false => 0
                            ""=> 0
 */
@@ -46,7 +46,7 @@ console.log(booleanIsLoggedIn)*/
 let booleanIsLoggedIn= Boolean(isLoggedIn)
 console.log(booleanIsLoggedIn)*/
 
-//CONCLUSION:  for Number-  
+//CONCLUSION:  for Boolean-  
 /*                        1 => true; 0 => false
                           "" => false
                           "Sana" => true
