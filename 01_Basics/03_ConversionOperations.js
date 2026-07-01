@@ -71,7 +71,7 @@ console.log(negvalue)*/
 // console.log(2**3)
 // console.log(2*3)
 // console.log(2/3)
-// console.log(2%3)
+// console.log(2%3)  [MODULUS]
 
 //Basic: works as expected
 /*let str1= "Hello"
@@ -84,21 +84,38 @@ console.log(str3)*/
 console.log(1+"2")
 console.log("1"+2+2) // if string first-> everything is considered a string.
 console.log(1+2+"2")*/  // if string at last toh first the mathematical operation is performed then merged with string value
-//CONCLUSION: use parenthesis for mathematical conversions
+//CONCLUSION: Do not such messy code; use parenthesis for mathematical conversions/calc
 
 //Tricky conversions:not preferred:(JST READ)
 // console.log(true)
-// console.log(+true)
-// console.log(+"")
+// console.log(+true)   ['true' provides corresponding numeric values and the '+' operator facilitates the conversion to print numeric result]
+// console.log(+"")  
 
 
 /*let num1, num2, num3
 num1= num2= num3= 2+2 */ //(more better ways to do this task)
- 
+
+// NOTE: To declare multiple variable with the same value
+// let num1, num2, num3;
+// num1 = num2 = num3 = 10;
+
+//Postfix and prefix operations: (in lec)
 /*let gameCounter= 100
 // gameCounter++  //value is incremented after usage
 ++gameCounter     //value is incremented then used
 console.log(gameCounter)*/
+
+//A good way to see the above difference is given below:
+/*let n = 5;
+
+console.log(n++); // 5
+console.log(n);   // 6
+
+n = 5;
+
+console.log(++n); // 6
+console.log(n);   // 6
+*/
 
 
  
