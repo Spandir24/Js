@@ -15,7 +15,7 @@ console.log(typeof myDate);
 /*let myCreateDate1= new Date()        
 let myCreateDate2= new Date(2023, 0, 23)
 
-console.log(myCreateDate1.toDateString())      //give present moment's date and time
+console.log(myCreateDate1.toDateString())      //Here, date consrtuctor: Date()- gives present moment's date and time
 console.log(myCreateDate2.toDateString())
 */
 
@@ -29,14 +29,14 @@ console.log(myCreateDate.toLocaleString());
 console.log(myCreateDate.toLocaleString());*/
 
 // (B)
-/*let myCreateDate= new Date("01-14-2023");        //mm-dd-yy => followed in India
+/*let myCreateDate= new Date("01-14-2023");        //mm-dd-yy => preferred/followed in India
 console.log(myCreateDate.toLocaleString());
 */
 
 /*let myTimeStamp= Date.now()
 console.log(myTimeStamp);                           // o/p: time from 1 Jan 1970 uptil now in millisec
 let myCreateDate= new Date("01-14-2023");
-console.log(myCreateDate.getTime());       //we used getTime() on date obj
+console.log(myCreateDate.getTime());       //we used getTime() on date obj to get value of time in ms from jan 1 (acc to ECMA script) upto this date obj. Such values can be used for date comparisons which is majorly done in sec.
 */
 
 //To get value of time in sec-
@@ -47,8 +47,8 @@ console.log(Math.floor(Date.now()/1000));
 /*let newDate= new Date();
 console.log(newDate)                // returns current date and time in its own format
 console.log(newDate.getMonth());    //count begins from zero here
-console.log(newDate.getMonth()+1);  // now we format the output to begin from 1
-console.log(newDate.getDay());
+console.log(newDate.getMonth()+1);  // now we format the output to begin from 1, so as to sync o/p with the normal calender months.
+console.log(newDate.getDay());     // gives 1: monday and so on..
 */
 
 //To custom date;
