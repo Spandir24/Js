@@ -26,7 +26,7 @@ console.log(real_another_array);
 
 /*console.log(Array.isArray("Hitesh"))
 console.log(Array.from("Hitesh"))
-//Interesting Case(INTERVIEWS): if it is not able to form an array from the given data it returns an empty string:-
+//Interesting Case(INTERVIEWS): if it is not able to form an array from the given data it returns an empty array:-
 console.log(Array.from({name: "hitesh"}))  
 */
 
