@@ -7,7 +7,7 @@
 //**********************
 
  
-//Object literals-
+//1.Object literals-
 //a) DECLARATION
 const mySym= Symbol("key1")       //defining a symbol: string "key1" is jst a description
 
