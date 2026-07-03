@@ -3,6 +3,7 @@
 //declaration
 /*const myArr= [0,1,2,3,4,5];      
 const myHeroes= ["Shaktiman", "Naagraj"]
+
 const myArr2= new Array(1,2,3,4)        //using 'new' keyword
 console.log(myArr[0])
 console.log(myHeroes.length)
@@ -73,7 +74,7 @@ console.log(arr); // [1, 4] ❗ modified
 
 //2.Example (add)
 /*let arr = [1, 4];
-arr.splice(1, 0, 2, 3);
+arr.splice(1, 0, 2, 3);        //Set deleteCount to 0
 console.log(arr); // [1, 2, 3, 4]
 */
 
@@ -100,7 +101,7 @@ console.log(arr);              //arr = [1]
 console.log(removed);          //removed = [2, 3]
 */
 
-//(B)- If start > length → it just adds at the end
+//(B)- If start > length → it just adds at the end*********
 /*let arr = [1, 2, 3];
 arr.splice(5, 1, 99);
 console.log(arr);              //[1, 2, 3, 99]
