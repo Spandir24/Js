@@ -56,7 +56,7 @@ console.log(JsUser);
                                     //    undefined
 
 JsUser.greetingTwo= function(){
-    console.log(`Hello JS user, ${this.name}`);         // 'this.' keyword is used to reference the same obj- its provides us the list of all prpts inside it.
+    console.log(`Hello JS user, ${this.name}`);         // 'this.' keyword is used to reference the same obj- it provides us a list of all prpts inside it.
 }
 
 console.log(JsUser.greeting());
