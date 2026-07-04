@@ -57,7 +57,7 @@ one()
         const website= " youtube"
         console.log(username+ website);
     }
-    //console.log(website);           //ERROR- becz its scope was limited to inner 'if' block 
+    //console.log(website);           //ERROR- becz its scope was limited to 'inner if' block 
 }
 //console.log(username);               //ERROR- becz its scope was limited until the outer 'if' block 
 */
@@ -77,7 +77,7 @@ addTwo(5)
 */
 
 //Now what we do is: write func call before declaration in both cases-
-// (addone(5))       //It executes w/o giving any o/p. with concole.log() it gives o/p= 6
+// (addone(5))       //It executes w/o giving any o/p but with console.log() it gives o/p= 6
 
 // function addone(num){
 //     return num+1
