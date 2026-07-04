@@ -20,7 +20,7 @@ addTwoNumbers(3,4);
 //what if the input 4 was given as "4"-
 addTwoNumbers(3,"4");      //JS converted itself but this might create problems if we dont check dtypes and operation being performed on them
 
-//fuction values can be stored inside variables as well-
+//fuction values can be stored inside variables as well- [BEGINNER'S MISTAKE]
 const result= addTwoNumbers(3,5);
 console.log("Result: ", result);    //concept: thus it is imp to note ki func se humne wapis kya bheja jo result mn store hua (explained below)
 //console print krne ka mtlb ye nhi ki function wo value return bhi kr ra h. Return is a diff concept while console.log only prints on screen.
@@ -55,8 +55,8 @@ console.log("Result: ", result);
 
 }
 console.log(loginUserMessage("Hitesh"));    //ARGUMENT passed
-console.log(loginUserMessage(""));          //empty string
-console.log(loginUserMessage());            //NO value passed=> undefined
+console.log(loginUserMessage(""));          //empty string- nothin prints inplace of variable
+console.log(loginUserMessage());            //NO value passed=> undefined ******
 */
 
 /*function loginUserMessage(username){
@@ -68,11 +68,12 @@ console.log(loginUserMessage());            //NO value passed=> undefined
 
 }
 console.log(loginUserMessage()); 
-//NOTE: undefined was returned becz func returned nothing (via 'return') [And not becz the agruments was undefined]
+//NOTE: undefined was returned becz func returned nothing (via 'return') [And not becz the agruments was undefined]**
 */
 
 //Another way of writing the same code:-  [! -> turns "true" to "false" and vice versa]
-/*Understand concept- for if-else, we consider empty string("") and undefined as false. Now, these can never go inside the "if block" coz only true values go inside "if".
+/*Understand concept- for if-else, 
+                                we consider empty string(""), undefined and NaN as false. Now, these can never go inside the "if block" coz only true values go inside "if".
 Thus we write in this way written below:
 */
 /*function loginUserMessage(username){
@@ -87,19 +88,19 @@ console.log(loginUserMessage());
 
 //to avoid such 'undefined' cases we can pass default values in- func declaration:-
 /*function loginUserMessage(username="Sana"){
-    if(!username){                        //control will never go inisde this (becz it as a 'default' value as base case.)
+    if(!username){                        //control will never go inisde this (becz it has a 'default' value as base case.)
         console.log("Please enter a username");
         return;
     }
-    return `${username} just logged in!` //if return executes this will never run after that
+    return `${username} just logged in!` //if return executes, this will never run after that
 }
 console.log(loginUserMessage()); 
-console.log(loginUserMessage("Hitesh"));   // argument will overide the default value
+console.log(loginUserMessage("Hitesh"));   // if argument is given, it will overide the default value
 */
 
 //-----------------------------------------------------
 //shopping cart scenario- wherein we dont know how many arguments may come and we have to set our no of parameters accordingly-
-//we use 'REST OPERTOR'- ...
+//we use 'REST OPERTOR'(ie., jo mila ra h wo khula hua data h, usko bundle up krdo & give me)- ...
 /*function calculateCartPrice(...num1){
     return num1;
 }
@@ -110,7 +111,7 @@ console.log(calculateCartPrice(200,400,500,2000));   //amounts of items in cart
 /*function calculateCartPrice(val1, val2,...num1){
     return num1;
 }
-console.log(calculateCartPrice(200,400,500,2000));
+console.log(calculateCartPrice(200,400,500,2000));    //respectively val1 & 2 get values, rest go in num1
 */
 
 
@@ -118,13 +119,15 @@ console.log(calculateCartPrice(200,400,500,2000));
 //1.
 /*const user={
     username:"hitesh",
-    price: 199,
+//    prices: 199,     // for 1. eg
+    price: 199
+    
 }
 function handleObject(anyobject){           //a generic name is given so that we can pass any object
     console.log(`Username is ${anyobject.username} and price is ${anyobject.price}.`);  
-    console.log(`Username is ${anyobject.username} and price is ${anyobject.prices}.`);    //Thus we have to be careful about whether the type being passed is an object and the required properties exist in it or not
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}.`);    //Thus we have to be careful about whether the type being passed is an object and the required properties exist in it or not
 }
-//handleObject(user);         // as ARGUMENTS we pass the object 
+//handleObject(user);         // in ARGUMENTS we pass the object 
 */
 
 
@@ -137,7 +140,7 @@ handleObject({
     username: "Sana",
     price: 399
 })
-//NOTE: Function declaration must be written before function call.
+//NOTE: Function declaration must be written before function call.    - "pata ni kyu likha h ye?11 smjh ni ara!"
 */
 
 
@@ -145,18 +148,16 @@ handleObject({
 //1. via variable name-
 /*const myNewArray=[200,400,100,600]
 function returnSecondValue(getArray){
-    return getArray[1];          //NOTE: we have to use the name of the parameter being used by used and not the actual array (or argument). 
-                                //"inside the function, the parameter name is what matters."
+    return getArray[1];          //NOTE: we have to use the name of the parameter being used by us and not the actual array (or argument). 
+                                //"inside the function, the parameter name is what matters." ***
 }
 console.log(returnSecondValue(myNewArray));
 */
 
 //another way of passing array in function call- (by declaring array directly inside the funcion call as ARGUMENT)
 //2.
-/*const myNewArray=[200,400,100,600]
-function returnSecondValue(getArray){
-    return getArray[1];          //NOTE: we have to use the name of the parameter being used by used and not the actual array (or argument). 
-                                //"inside the function, the parameter name is what matters."
+/*function returnSecondValue(getArray){
+    return getArray[1];           
 }
 console.log(returnSecondValue([200,400,100,600]));
 */
