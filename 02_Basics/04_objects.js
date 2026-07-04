@@ -2,15 +2,15 @@
 //2 ways of creating an empty object-
 
 //const tinderUser= new Object()      //singleton object    //Object constructor
-const tinderUser= {}                  //Non- singleton object
+const tinderUser = {}                  //Non- singleton object
 
-tinderUser.id= "123abc"
-tinderUser.name= "Sammy"
-tinderUser.isLoggedIn= false
+tinderUser.id = "123abc"
+tinderUser.name = "Sammy"
+tinderUser.isLoggedIn = false
 //console.log(tinderUser);
 
 //Objects inside objects-
-const regularUser= {
+const regularUser = {
     email: "Some@gmail.com",
     fullname: {
         userfullname: {
@@ -23,16 +23,16 @@ const regularUser= {
 //console.log(regularUser.fullname.userfullname.firstname);            // this way we can access nested objects using 'dot notation'
 
 //to combine objects- (just like arrays)
-const obj1= {1: "a", 2: "b"}
-const obj2= {3: "c", 4: "d"}
-const obj4= {5: "e", 6: "f"}
+const obj1 = { 1: "a", 2: "b" }
+const obj2 = { 3: "c", 4: "d" }
+const obj4 = { 5: "e", 6: "f" }
 //way-1) similar problem as array arises here: "obj inside object"-
 /*const obj3= {obj1, obj2}
 console.log(obj3) */
 
 //way-2) to avoid this problem-                       //less preferred
 /*const obj3= Object.assign({}, obj1, obj2, obj4)
-console.log(obj3) */     
+console.log(obj3) */
 
 //way-3) the 'SPREAD' method-                       //90% usage
 /*const obj3= {...obj1, ...obj2}
@@ -54,7 +54,7 @@ console.log(obj3); */
     }
 ]
 console.log(users[1].email)  */      //STEP: 1) an array => thus indexed,
-                                    // then, 2) object => accesed via (.) dot notation
+// then, 2) object => accesed via (.) dot notation
 
 //***********
 //console.log(tinderUser)
@@ -70,7 +70,7 @@ console.log(users[1].email)  */      //STEP: 1) an array => thus indexed,
 //VID- 18:  Destructuring: 1)objects & 2)arrays- [done very rare]
 
 //destructuring of object-
-const course= {
+const course = {
     coursename: "Js in hindi",
     price: "999",
     courseInstructor: "Hitesh",
@@ -85,14 +85,13 @@ console.log(courseInstructor);
 
 // OR
 
-/*const {courseInstructor: instruc}= course;        // we destructured an obj 
+/*const {courseInstructor: instruc}= course;        // we destructured an obj
 console.log(instruc);
 */
 
 //in react- JST READ THRU:
-/*const navbar= ({company}) => { 
-//here instead of writing (prop.company) everytime, they destructure it by writing inside {
-// => {} syntax means destructuring is being done.
+/*const navbar= ({company}) => {                            //here instead of writing (prop.company) everytime, they destructure it by writing inside {
+                                                            // => {} syntax means destructuring is being done.
 }
 navbar(company= "Hitesh")
 */
@@ -104,7 +103,7 @@ navbar(company= "Hitesh")
     "name": "hitesh",
     "coursename": "Js in hindi",
     "price: "free"
-}       //here this format is showing some errors but ignore them, this is CORRECT. 
+}       //here this format is showing some errors but ignore them, this is CORRECT.
 */
 //Eg of a Json formatted API(as obj): https://api.github.com/users/hiteshchoudhary
 
@@ -123,4 +122,4 @@ navbar(company= "Hitesh")
 
 // 2. Pasted it on Json formatter
 
-//API's IS ALL JSON format.
+//API's ARE ALL JSON format.
