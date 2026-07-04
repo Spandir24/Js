@@ -20,7 +20,7 @@ const regularUser= {
     }
 }
 //console.log(regularUser.fullname);    //written just to see how object is stored
-//console.log(regularUser.fullname.userfullname.firstname);
+//console.log(regularUser.fullname.userfullname.firstname);            // this way we can access nested objects using 'dot notation'
 
 //to combine objects- (just like arrays)
 const obj1= {1: "a", 2: "b"}
@@ -38,7 +38,7 @@ console.log(obj3) */
 /*const obj3= {...obj1, ...obj2}
 console.log(obj3); */
 
-//multiple 'objects' as elements inside an array
+//multiple 'objects' as indiv. elements inside an array
 /*const users= [
     {
         id: 1,
@@ -59,10 +59,10 @@ console.log(users[1].email)  */      //STEP: 1) an array => thus indexed,
 //***********
 //console.log(tinderUser)
 //imp methods-
-//console.log(Object.keys(tinderUser))       //returns an array- containing keys*** (V.IMP)
+//console.log(Object.keys(tinderUser))       //returns an array- containing all the keys*** (V.IMP)
 // console.log(Object.values(tinderUser))    //returns an array- containing values
-// console.log(Object.entries(tinderUser))   //each 'key:value' pair is made an array.
-//to ask whether a particular value(ie., key) exists in an object-
+// console.log(Object.entries(tinderUser))   //each 'key:value' pair is made an array entry inside an array.
+//to ask whether a particular value(ie., key) exists in an object or not-
 // console.log(tinderUser.hasOwnProperty('isLoggedIn'));            
 
 
