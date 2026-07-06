@@ -5,21 +5,24 @@ const user= {
     welcomeMessage: function (){
         console.log(`${this.username}, welcome to website!`);
         // console.log(this);       // Therefore, when 'this' is called as an obj-method it refers to the 'current context of object' on which it is being called.
+                                    // Also, if we write above func as an arrow function inside an obj, we get same results as this (eg given at last)
     }
 }
 // user.welcomeMessage()
-// user.username= "Sam"     // we changed the context here. 
+// user.username= "Sam"     // we changed the context. 
 // user.welcomeMessage()
 
 //console.log(this);         // {} => o/p in node environment but, the o/p is 'Window obj' in browsers(NON- STRICT MODE).
 
-// 'this' written inside a function- [2 ways done becz there are 2 ways of writing func.]
+
+
+// 'this' written inside a function- [done in 2 ways becz there are 2 ways of writing func.]
 // 1. Way1-
 /*function chai(){
     //console.log(this);     // gives a lot many values- only rem this
 
     let username= "Sana";
-    console.log(this.username);         // here the result confirms us that 'this' does not work the same way as it does in objects
+    console.log(this.username);         // here the result confirms us that 'this' does not work the same way as it does in objects, becz here giving undefined
 }
 chai()
 */
@@ -27,7 +30,7 @@ chai()
 // 2. Way2-
 /*const chai= function(){
     let username= "Sana";
-    console.log(this.username);         // here also the result confirm us that 'this' does not work the same way as it does in objects
+    console.log(this.username);         // here also the result confirm us that 'this' does not work the same way as it does in objects.
 }
 chai()
 */
@@ -38,7 +41,7 @@ chai()
     console.log(this);
 
     let username= "Sana";
-    console.log(this.username);           // (even if we write this arrow function inside an obj we get sam reults as this (eg given at last)).Therefore, consistency of o/p (as above)is maintained in arrow func as well. 
+    console.log(this.username);           // Therefore, consistency of o/p (as above)is maintained in arrow func as well(similar to above normal func). 
 }
 chai()
 */
