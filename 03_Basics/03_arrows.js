@@ -113,3 +113,25 @@ obj.normal();
 console.log("--------------------------------");
 obj.arrow();
 
+// =================================
+/*Rule of thumb:
+
+An arrow function should be one of these:
+
+✅1) Assigned to a variable-
+
+const add = (a, b) => a + b;        // so that we can call it- console.log(add(2,3));
+
+✅2) Passed directly as an argument- (here num is a valuey to refer values of arr)
+
+const arr = [1, 2, 3];
+arr.forEach((num) => {
+    console.log(num);
+});
+
+✅3) Called immediately (IIFE)-
+
+((num1, num2) => {
+    console.log(num1 + num2);
+})(2, 3);
+*/
