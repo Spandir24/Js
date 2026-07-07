@@ -32,6 +32,19 @@ false == ''   => true
 0 == ''       => true
 */
 
-// Nullish Coalescing operator1(??): null & undefined
+//TWO DIFF TYPES OF OPERATORS
+//1. Nullish Coalescing operator1(??): null & undefined- returns the right-hand value only if the left-hand value is null or undefined.
 let val1;
-val1= 5??10;
+//val1= 5 ?? 10;
+//val1= null ?? 10
+//val1= undefined ?? 15
+val1= null ?? 10?? 20
+
+//console.log(val1);
+
+
+//2. Ternary operator
+//syntax:  condition ? true : false
+
+const iceTeaPrice= 100
+iceTeaPrice <= 80 ? console.log("less than 80") : console.log("more than 80");

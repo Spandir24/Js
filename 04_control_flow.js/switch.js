@@ -53,3 +53,20 @@ switch (month) {
         break;
 }
 */
+
+//switch can also perform grping of multiple multiple cases:
+/*let grade = "B";
+
+switch (grade) {
+  case "A":
+  case "B":
+  case "C":
+    console.log("Pass");
+    break;
+
+  case "D":
+  case "F":
+    console.log("Fail");
+    break;
+}
+*/
