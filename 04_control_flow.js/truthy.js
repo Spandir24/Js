@@ -48,3 +48,10 @@ val1= null ?? 10?? 20
 
 const iceTeaPrice= 100
 iceTeaPrice <= 80 ? console.log("less than 80") : console.log("more than 80");
+
+//EXTRA:
+/*
+(1 || 0) - uses the logical OR (||) operator.
+
+The || operator returns the first truthy value it encounters. If the first value is falsy, it returns the second value.
+*/
