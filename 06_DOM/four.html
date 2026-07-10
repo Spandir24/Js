@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code | DOM</title>
+</head>
+<body style="background-color: #212121; color:#fff ;">
+    <ul class="language">
+        <li>Js</li>
+    </ul>
+    
+</body>
+
+<script>
+    <!--DESIGNING A FUNCTION TO ADD A LIST ITEM: create a list item then append it to the parent element 'ul'-->
+    function addLanguage(langName) {
+        const li= document.createElement('li');
+        li.innerHTML= `${langName}`;
+        document.querySelector('.langName').appendChild(li);
+    }
+    addLanguage("Python");
+    addLanguage("TypeScript");
+
+</script>
+
+</html>
