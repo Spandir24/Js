@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code</title>
+</head>
+<body style="background-color: #212121; color:#fff ;">
+    
+</body>
+<script>
+    const div= document.createElement('div');
+    console.log(div);
+    div.className= "main";
+    div.id= Math.round(Math.random()* 10 + 1)
+
+    <!--to set custom attributes-->
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor= "green"
+    div.style.padding= "12px"
+
+    //div.innerText= "Chai Aur Code"    // this takes 2 trips: first takes DOM elements's value from browser to JS console then overrites over it with scripts values
+    
+    <!--a better way than above(coz takes only 1 trip) -->
+    const addText= document.createTextNode("Chai Aur Code")
+    div.appendChild(addText)
+    
+    <!--a way to attach this element onto document-->
+    document.body.appendChild(div)
+
+
+</script>
+</html>
