@@ -13,15 +13,46 @@
 </body>
 
 <script>
-    <!--DESIGNING A FUNCTION TO ADD A LIST ITEM: create a list item then append it to the parent element 'ul'-->
+    //DESIGNING A FUNCTION TO ADD A LIST ITEM: create a list item then append it to the parent element 'ul'
     function addLanguage(langName) {
         const li= document.createElement('li');
         li.innerHTML= `${langName}`;
-        document.querySelector('.langName').appendChild(li);
+        document.querySelector('.language').appendChild(li);
     }
     addLanguage("Python");
     addLanguage("TypeScript");
 
+
+    // BUT THIS FUNCTION HAS A PRBLM: it traverses all thru the DOM tree each time it is called, which is inefficient for large datasets.
+    // So an optimal func for this wld be: //RECOMMENDED
+    function addOptiLanguage(langName) {
+        const li= document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLanguage('Golang') 
+
+
+
+    //EDIT Eg1:
+    const secondLang= document.querySelector("li:nth-child(2)")
+    //secondLang.innerHTML= "Mojo"
+
+    //optimised way(ie., instead of .innerHTML)- [via creating element] 
+    const newLi= document.createElement('li') 
+    newLi.textContent= "Mojo"
+    secondLang.replaceWith(newLi)
+
+    //EDIT Eg2: to replace JavaScript list item with TypeScript
+    const firstLang= document.querySelector("li:first-child")
+    firstLang.outerHTML= '<li>TypeScript</li>'
+
+    //REMOVE- (golang list item)
+    const lastLang= document.querySelector('li:last-child')
+    lastLang.remove()
+
+
+    
 </script>
 
 </html>
