@@ -78,7 +78,34 @@
     */
 
 
-    // Project task: Upon clicking images, they shld vanish
+    // Project task- Upon clicking any image, they shld vanish
+    /*document.querySelector('#images').addEventListener('click', function(e) {
+        console.log(e.target.parentNode);   //parentNode used becz we reqd the parent of <img>
+
+        let removeIt= e.target.parentNode;
+        // WAY-1:(Modern way)
+        // removeIt.remove();
+
+        // WAY-2: (Older way)
+        removeIt.parentNode.removeChild(removeIt)
+    })  
+    */ 
+
+ 
+    // but in both ways, if we click any <li> its parent ie <ul> gets removed entirely. (coz we are accessing parentNode each time)
+
+    // SO what we do then:
+    document.querySelector('#images').addEventListener('click', function(e) {
+        console.log(e.target.tagName);  
+
+        if (e.target.tagName=== 'IMG') {
+            console.log(e.target.id);
+            
+            let removeIt= e.target.parentNode;
+            removeIt.remove();
+        }          
+    })
+    
 
 
 
