@@ -202,25 +202,26 @@ function endGame() {
 # Project 5 solution
 
 ```javascript
-const insert = document.getElementById('insert');
+//My code: (few comments)
 
+const insert = document.getElementById('insert');
 window.addEventListener('keydown', (e) => {
   insert.innerHTML = `
-    <div class='color'>
-    <table>
-    <tr>
-      <th>Key</th>
-      <th>Keycode</th> 
-      <th>Code</th>
-    </tr>
-    <tr>
-      <td>${e.key === ' ' ? 'Space' : e.key}</td>
-      <td>${e.keyCode}</td> 
-      <td>${e.code}</td>
-    </tr>
-    
-  </table>
-    </div>
+  <div class= 'color'>
+  <table>
+  <tr>
+    <th>Key</th>
+    <th>Keycode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' ' ? 'Space' : e.key}</td>  // ternary operator used- becz space the key is shown as (blank)
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+
+</table>
+  </div>
   `;
 });
 
@@ -232,7 +233,7 @@ window.addEventListener('keydown', (e) => {
 ```javascript
 //generate a random color
 
-// My code: (few comments)
+//My code: (few comments)
 
 const randomColor= function() {
   const hex= "0123456789ABCDEF"
