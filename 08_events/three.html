@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CHAI AUR JS</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    //setInterval()
+    /*const sayDate= function(str) {
+        console.log(str, Date.now());
+    };
+    // setInterval(sayDate,1000);
+
+    //Now, this setInterval() can also take parameters:-
+    const intervalId= setInterval(sayDate,1000, "Hello!");
+
+    // clearInterval(intervalId)
+    */
+
+    // TASK: to make this function stored in sayDate run when 'START' button is clicked and make it stop when 'STOP' button is clicked
+
+    let intervalId;
+
+    const startBtn= document.querySelector('#start');
+    startBtn.addEventListener('click', function(){
+
+        // Impovement from GPT: If you click Start multiple times, you'll create multiple intervals.
+        if (!intervalId) {
+            intervalId= setInterval( () => {
+                console.log("Hello Sana!", new Date().toTimeString());
+            },3000);
+        }
+    });
+
+    const stopBtn= document.querySelector('#stop');
+    stopBtn.addEventListener('click', function(){
+        clearInterval(intervalId);        
+    });    
+
+    //YAYYYY!!!!!!! I did it myself!!
+    
+</script>
+
+</html>
