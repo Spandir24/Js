@@ -232,33 +232,46 @@ window.addEventListener('keydown', (e) => {
 ```javascript
 //generate a random color
 
-const randomColor = function () {
-  const hex = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += hex[Math.floor(Math.random() * 16)];
+// My code: (few comments)
+
+const randomColor= function() {
+  const hex= "0123456789ABCDEF"
+  let color= '#'
+  for(let i=0; i<6; i++){
+    color+= hex[Math.floor(Math.random()*16)];  //these are actually positions.
+    // NOTE: parseInt() is meant to parse strings into integers, not to round numbers.It  works on numbers because JavaScript first converts the number to a string internally 
   }
   return color;
-};
+}
 
 let intervalId;
-const startChangingColor = function () {
-  if (!intervalId) {
-    intervalId = setInterval(changeBgColor, 1000);
+
+const startChangingColor= function() {
+  if(!intervalId){        // cleaner code
+    intervalId= setInterval((ChangeBgColor), 1000);
+  }
+  //since yhin setInterval define hora h toh yhi likdia func bhi- no rule used as such, ig bahar bhi likha ja skta h
+  function ChangeBgColor(){
+    document.body.style.backgroundColor= randomColor()
   }
 
-  function changeBgColor() {
-    document.body.style.backgroundColor = randomColor();
-  }
-};
-const stopChangingColor = function () {
+}
+
+const stopChangingColor= function() {
   clearInterval(intervalId);
-  intervalId = null;
-};
+  intervalId= null;    // cleaner code
+  // it used to reset the variable after the interval has been stopped.
+  /* understand with an eg: 
+    Suppose intervalId is 5. 
+    clearInterval(5); => This tells JavaScript to stop the interval whose ID is 5.
+    However, clearInterval() does NOT change the value stored in intervalId.
+    Thus when we do: intervalId = null;   => This means: "There is currently no active interval.
+  */
+}
 
-document.querySelector('#start').addEventListener('click', startChangingColor);
 
-document.querySelector('#stop').addEventListener('click', stopChangingColor);
+document.querySelector("#start").addEventListener('click', startChangingColor)
 
+document.querySelector("#stop").addEventListener('click', stopChangingColor)
 
 ```

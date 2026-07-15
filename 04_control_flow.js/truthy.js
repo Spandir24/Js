@@ -9,7 +9,7 @@ else{
 */
 
 // falsy values: false, 0, -0, BigInt, 0n, "", null, undefined, NaN
-//truthy values: "0" -(0 inside str), 'false', " " -(space inside str), [], {}, function(){} - ('empty func' is also truthy)
+//truthy values: =ve/ -ve values, "0" -(0 inside str- ie., (any string)), 'false', " " -(space inside str), [], {}, function(){} - ('empty func' is also truthy)
 
 
 //to chk for empty arrays:
