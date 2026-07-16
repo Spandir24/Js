@@ -72,6 +72,87 @@ promiseFour
 }).finally( () => console.log("The promise is either resolved or rejected."));
 */
 
-const promiseFive= new Promise(function(resolve, reject) {
-    
-})
+//here, we try accepting this file returned the promise via some other way instead of '.then() . catch()'
+/*const promiseFive = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    let error = true;
+    // let error= false
+    if (!error) {
+      resolve({ username: "Js", password: "123" });
+    } else {
+      reject("ERROR: Js went wrong"); // 'reject' is used to give error
+    }
+  }, 1000);
+});
+
+// async function consumePromiseFive() {
+//   const response = await promiseFive;     // here PromiseFive is an object
+//   console.log(response);
+// }
+// this does not handle errors gracefully thus we wrap it in a try- catch block
+
+async function consumePromiseFive() {
+  try {
+    const response = await promiseFive;
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+consumePromiseFive()
+*/ 
+
+// Thus, we can use any of the above 2 whichever suits use: async/await OR try/catch
+
+
+/*async function getAllUsers() {
+    try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/users",
+        );
+
+        // first we must know 'type' of the response
+        const data = await response.json(); // becz as of now the data we are receiving is in 'string' format, thus we converted it to json to peroform reqd operations on it (if any)
+        // also. this conversion takes time thus we need to write 'await' here
+
+        console.log(data);
+
+    } catch (error) {
+        console.log("E: ", error);
+        
+    }
+}
+getAllUsers()
+
+*/
+
+// Now, we wish to write the same above code using '.then().catch()'
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(data);
+  });
+// GOOD THING here is: each subsequent block starts only when the prev completes
+// Since we are directly using fetch thus there is no need to call it as a func
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// git config --global user.name "Spandir24"
+// git config --global user.email "pandirsana@gmail.com"
