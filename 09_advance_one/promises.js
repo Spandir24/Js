@@ -128,7 +128,7 @@ getAllUsers()
 */
 
 // Now, we wish to write the same above code using '.then().catch()'
-fetch("https://jsonplaceholder.typicode.com/users")
+fetch('https://api.github.com/users/hiteshchoudhary')
   .then((response) => {
     return response.json();
   })
@@ -136,10 +136,10 @@ fetch("https://jsonplaceholder.typicode.com/users")
     console.log(data);
   })
   .catch((error) => {
-    console.log(data);
+    console.log(error);
   });
 // GOOD THING here is: each subsequent block starts only when the prev completes
-// Since we are directly using fetch thus there is no need to call it as a func
+// Since we are directly using fetch thus there is no need to call (it as a func).
 
 
 
@@ -152,7 +152,7 @@ fetch("https://jsonplaceholder.typicode.com/users")
 
 
 
-
+// node .\09_advance_one\promises.js
 
 // git config --global user.name "Spandir24"
 // git config --global user.email "pandirsana@gmail.com"
