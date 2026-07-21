@@ -10,12 +10,12 @@
 ## Why use OOP?
 
 ## Parts of OOP
-object literal- means: object only ie., literally 1 object banaana h=>  {}
+1) object literal- means: object only ie., literally 1 object banaana h=>  {}
 
--Constructor func
--Prototypes
--Classes
--Instances (new, this keyword)
+2) Constructor func
+3) Prototypes
+4) Classes
+5) Instances (new, this keyword)
 
 ## 4 pillars
 -Abstraction- (hiding details)
