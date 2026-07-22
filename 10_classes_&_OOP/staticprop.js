@@ -12,16 +12,20 @@ class User {
 //     return `123`; // or a random no can be generated
 //   }
 
-  static createId() {
+  static createId() {                   // means: This method belongs to the class itself, not to the objects created from that class.   BUT NOTE THAT 'NORMAL METHODS' BELONG ONLY TO OBJECTS AND NOT CLASSES
     return `123`; // or a random no can be generated
   }
 }
 
 const hitesh = new User("Hitesh")
-// console.log(hitesh.createId())     // with 'static' the function own class doesn't get its access
+// console.log(hitesh.createId())     // try this with both: with & w/o 'static'
 
-// Now we dont want to give a particular prpty/ method's access to every obj instantiated from that class
-// just use 'static' keyword before that method name and it becomes inaccessible even to child classes
+// Thus, if we dont want to give a particular prpty/ method's access to every obj instantiated from that class
+// just use 'static' keyword before that method name and it becomes inaccessible even to its child classes.
+
+// BUT NOTE: THAT IT REMAINS ACCESSIBLE TO ITS OWN 'CLASS' - 
+// console.log(User.createId());
+
 
 class Teacher extends User{
     constructor(username,email){    // order of arguments dosn't matter 
@@ -32,4 +36,4 @@ class Teacher extends User{
 
 const iphone= new Teacher("iphone", "i@phone.com")
 // iphone.logMe()
-console.log(iphone.createId())
+// console.log(iphone.createId())
