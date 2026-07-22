@@ -1,36 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React</title>
-</head>
-<body>
+  </head>
+  <body>
     <button>Button Clicked</button>
-    
-</body>
-<script>
+  </body>
+  <script>
+    class React {
+      constructor() {
+        ((this.library = "React"), 
+        (this.server = "http://localhost:300"));
 
-    class React{
-        constructor(){
-            this.library= "React",
-            this.server= "http://localhost:300"
+        //To do: 1)As soon as the page loads we get reference of the button and 2) a method shld exist to show me some messge
 
-            //To do: 1)As soon as the page loads we get reference of the button and 2) a method shld exist to show me some messge 
+        document
+          .querySelector("button")
+          .addEventListener("click", this.handleClick.bind(this));
+      }
 
-            document
-                .querySelector('button')
-                .addEventListener('click', this.handleClick)
-        }
-
-        handleClick(){
-            console.log("Button Clicked");
-            console.log(this.server);
-            
-            
-        }
+      handleClick() {
+        console.log("Button Clicked");
+        console.log(this);             // 'this' => "jisne call kia" ie button
+        console.log(this.server);
+      }
     }
 
-    const app = new React()
+    const app = new React();
 </script>
 </html>
