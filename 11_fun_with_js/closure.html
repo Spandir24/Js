@@ -93,7 +93,7 @@ Thus we get to know ki poori memory share hoti h (ie., poora lexical scope jaata
     // Now we have to do the same for 500 buttons  => 'this way!! sorry not possible"
 
 
-    
+
     //so we try bundling tasks: first me make the onclick function section:
 
     function clickHandler(color){
@@ -113,3 +113,20 @@ Thus we get to know ki poori memory share hoti h (ie., poora lexical scope jaata
 
 
 </html>
+
+/*ALSO UNDERSTAND THIS CLOSURE EG:
+function createCounter() {
+  let count = 0;
+
+  return function () {
+    count++;
+    return count;
+  };
+}
+
+const counter = createCounter();
+
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3
+*/
