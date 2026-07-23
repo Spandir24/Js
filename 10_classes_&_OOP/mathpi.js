@@ -1,24 +1,25 @@
-const descriptor= Object.getOwnPropertyDescriptor(Math, "PI")
-// console.log(descriptor);
-// thus we can also make our own prpts with such specific conditions applied on them 
-
-
 // console.log(Math.PI);
 // Math.PI=5;
-// console.log(Math.PI);   // thus this PI prpty ki value cannot be changed
+// console.log(Math.PI);   // thus we see here ki this PI prpty ki value cannot be changed by overwriting
 
-//const mynewObject= Object.create()    //used to create an object OR can be made directly as below
+const descriptor = Object.getOwnPropertyDescriptor(Math, "PI");
+// console.log(descriptor);     // this prpty has 'writable' descriptor attribute as false, thus its value cannot be changed
 
-const chai= {
-    name: 'Ginger chai',
-    price: "250",
-    isAvailable: true,
 
-    orderChai: function(){      //when we loop over this Object, func is displayed as it is written in object, which is not optimal thus we put constraint on its displaying by if condition
-        console.log("Chai nhi bni");
-        
-    }
-}
+// So, can we also make our own prpts with such specific conditions applied on them?
+
+//const mynewObject= Object.create()    //via FACTORY FUNC: we can  create an object OR can be made directly as below
+
+const chai = {
+  name: "Ginger chai",
+  price: "250",
+  isAvailable: true,
+
+  orderChai: function () {
+    //when we loop over this Object, func is displayed as it is written in object, which is not optimal thus we put constraint on its displaying by 'if condition'
+    console.log("Chai nhi bni");
+  },
+};
 
 // console.log(chai);
 
@@ -28,16 +29,13 @@ console.log(Object.getOwnPropertyDescriptor(chai, "name"));
 
 //to disrupt prpts as per our req:
 Object.defineProperty(chai, "name", {
-//   writable: false,
-  enumerable: false       // means iteration over its stops
+  //   writable: false,
+  enumerable: false,               // means iteration over "name" prpty stops
 });
 console.log(Object.getOwnPropertyDescriptor(chai, "name"));
 
-
 for (let [key, value] of Object.entries(chai)) {
-    if (typeof value !== 'function') {
-            console.log(`${key}: ${value}`);
-    } 
-    
+  if (typeof value !== "function") {
+    console.log(`${key}: ${value}`);
+  }
 }
-
