@@ -1,4 +1,4 @@
-// older way of writing getter & setter via prpts: 'FUNCTION BASED SYNTAX'
+//(II) older way of writing getter & setter via prpts: 'FUNCTION BASED SYNTAX'
 
 // pehle classes wgera toh thi nhi, func hi hote the-
 function User(email, password){

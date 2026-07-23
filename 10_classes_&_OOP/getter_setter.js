@@ -52,3 +52,6 @@ const hitesh = new User("h@hitesh.ai", "abc");
 console.log(hitesh.email);
 
 
+// (I)THIS WAS THE MODERN SYNTAX OF DOING 'GETTER- SETTER' : 90% used syntax
+
+

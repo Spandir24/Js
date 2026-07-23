@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur chai</title>
+</head>
+<body style="background-color: #313131;;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+    
+</body>
+
+<script>
+// UNDERSTANDING ' LEXICAL SCOPING '  
+
+
+    // function init() {
+    //     let name = "Mozilla"; 
+    //     function displayName() {
+    //         console.log(name); 
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+
+    /*function outer(){
+        let username= "hitesh"
+    }
+    console.log(username);   // thus anything declared within the functional scope is not available outside it
+    */   
+
+    /*function outer(){
+        let username= "hitesh";
+        console.log(secret);     // outer func cannot access inner func's data
+        
+        function inner(){
+            let secret= "my123"
+            console.log("INNER: ", username);     // inner func have access to variable of the outer func via LEXICAL SCOPING
+        }
+
+        function innerTwo(){
+            console.log("INNER TWO: ", username);
+            console.log(secret);                // a func cannot access its sibling's data
+        }
+
+        inner();
+        innerTwo();
+    }
+
+    outer();
+    console.log(`TOO OUTER, ${username}`);   
+*/
+
+//NOTE: THAT THE NESTED/ (CHILD) FUNCTION'S EXECUTIONAL CONTEXT IS ABLE TO ACCESS DATA FROM ITS OUTER/ PARENT FUNCTION'S EXECUTIONAL CONTEXT
+
+
+// UNDERSTANDING ' CLOSURE ' 
+
+
+function makeFunc() {
+    const name = "Mozilla";
+    function displayName() {
+        console.log(name);
+    }
+    return displayName;     // here, nested func's ref has been returned
+}
+
+const myFunc = makeFunc();       
+myFunc();
+// here prblm is: outer func hi gayab hogya h fir kaise hogi lexical scoping becz jis func ko return kia h that is using its own outer func's variable jo ki execute hone k baad exist hi nhi krta [due to func executional context]
+
+// BUT YAHAN PE "MEMORY" KA ROLE AA JATA H AB:
+/* when we return the nested func's reference, sirf nested func akela nhi jaata, if its outer func exists (obv incase of nested function), to uska bhi poora scope jayega [becz of lexical soping]
+
+Thus we get to know ki poori memory share hoti h (ie., poora lexical scope jaata h) between parent and nested func and nt only executional context
+*/
+   
+</script>
+
+<script>
+    //GOAL: CLICKING ANY OF THE 2 BUTTTONS SHLD CHANGE THE BG INTO THE RESPECTIVE COLOR
+    /*document.getElementById("orange").onclick= function(){
+        document.body.style.backgroundColor= 'orange';
+    }
+
+    document.getElementById("green").onclick= function(){
+        document.body.style.backgroundColor= 'green';
+    }
+    */
+
+    // Now we have to do the same for 500 buttons  => 'this way!! sorry not possible"
+
+
+    
+    //so we try bundling tasks: first me make the onclick function section:
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor= `${color}`;
+
+        return function() {                  // CLOSURE concept
+            document.body.style.backgroundColor= `${color}`;
+        }
+    }
+
+    // document.getElementById('orange').onclick= clickHandler("orange")
+    // document.getElementById('green').onclick= clickHandler("green")
+    // This is not executing becz onclick reqd handler but we passed the func to execute (which can execute directly it doesn't req oevent to occur). Thus now we need to change the functions definition itself/
+    
+    
+</script>
+
+
+</html>
