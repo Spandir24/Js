@@ -90,25 +90,76 @@ Thus we get to know ki poori memory share hoti h (ie., poora lexical scope jaata
     }
     */
 
+
+
     // Now we have to do the same for 500 buttons  => 'this way!! sorry not possible"
+    //so we try bundling tasks: first me make the onclick function section & then call it for respective buttons as req:
+
+    /*function clickHandler(color){
+        document.body.style.backgroundColor= `${color}`;
+    }
+
+    //document.getElementById('orange').onclick= clickHandler       // func definition/ reference has been passed here- means: " mn aapko func definition de deta hu.. bs" - which is exactly the thing req by .onclick prpty [NOTE: not a method] but we also need to pass an argument for the color variable, doing which will make the progr execute on its own, w/o event happening (see below)  thus we need to do something else 
+
+    document.getElementById('orange').onclick= clickHandler("orange")
+    document.getElementById('green').onclick= clickHandler("green")
+    */
+    // This is not executing becz onclick reqd handler but we passed the func to execute (which can execute directly it doesn't req oevent to occur). Thus now we need to change the functions definition itself:
 
 
 
-    //so we try bundling tasks: first me make the onclick function section:
 
+// correct way
     function clickHandler(color){
-        // document.body.style.backgroundColor= `${color}`;
+        document.body.style.backgroundColor= `${color}`;
 
-        return function() {                  // CLOSURE concept
+        return function() {                  // CLOSURE concept usecase
             document.body.style.backgroundColor= `${color}`;
         }
     }
 
-    // document.getElementById('orange').onclick= clickHandler("orange")
-    // document.getElementById('green').onclick= clickHandler("green")
-    // This is not executing becz onclick reqd handler but we passed the func to execute (which can execute directly it doesn't req oevent to occur). Thus now we need to change the functions definition itself/
+    document.getElementById('orange').onclick= () => clickHandler("orange")
+    document.getElementById('green').onclick= () => clickHandler("green")
+  
     
+//==========================================================//
+// I FOUND ANOTHER WAY OF DOING THIS TASK, "onclick needs a function reference, but when we need to pass arguments, directly calling the function would execute it immediately; we wrap the function call inside another function, which can be passed as the reference and executed later by the event."
+    /*function clickHandler(color){
+        document.body.style.backgroundColor= `${color}`;
+    }
     
+    document.getElementById('orange').onclick= () => {clickHandler("orange")}
+    document.getElementById('green').onclick= () => {clickHandler("green")}
+
+    //The key idea here:    () => { code }      means:     Create a function containing this code.
+
+
+    MY DOUBT WAS: but what diff exactly does this arrow make?
+    Ans) The arrow function () => {} acts as a wrapper that delays the execution of clickHandler("orange"). 
+    HOW?
+    Because JavaScript treats a function differently depending on whether you write its name or call it with (). JavaScript sees:
+                                        () => { ... }
+    it creates a function:
+                        function () {
+                            clickHandler("orange");
+                        }
+But it does not execute the code inside the function yet, until the click event happens.
+
+
+//============================================================================================//
+=>  why arrow func was needed/ made when already func existed?
+
+1) Shorter syntax: Arrow functions let you write functions more concisely.
+2) Useful for small functions: Especially callbacks like click handlers, timers, array methods, etc.
+3) Better handling of this: Arrow functions don't create their own this; they inherit it from the surrounding scope.
+4) Cleaner callback code: They make functions passed as arguments easier to read.
+5_ More modern JavaScript style: They were introduced as part of ES6 to make common function patterns simpler.
+
+==> Important: "Arrow functions were not made because normal functions were insufficient. They were mainly introduced to provide shorter syntax and different behavior for this, making certain situations easier to write and understand.''
+
+    */
+
+
 </script>
 
 
